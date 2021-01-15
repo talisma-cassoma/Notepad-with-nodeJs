@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <link rel="stylesheet" href="homeStyle.css">
+ </head>
+ <body>
+   <head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+</head>
+<body>
+   <a href="/postagem"><div class="postar"> Postar</div></a>
+<div class="container">
+  {{#each posts}}
+   <form class="card" action="/modificar/{{dataValues.id}}" method="POST">
+    	  <a href="/deletar/{{dataValues.id}}"><div class="exitBtn" >
+					<div class="pile one"></div>
+					<div class="pile two"></div>
+			</div></a>
+      <h3 class="title"><p>{{dataValues.titulo}}</p>
+        <input type="text" name="inputTitle">
+      </h3>
+      <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"><p>{{dataValues.conteudo}} 
+        </p><textarea name="inputPost" cols="18" rows="10"></textarea></div>
+      </div>
+   </form>
+  {{/each}}
+</div>
+<script src="script.js"></script>
+  </body>
+</html>
+
+
+
