@@ -77,7 +77,7 @@ const Post = require('./modules/post');
     })
 
 //SERVIDOR
-app.listen(8081, function(){
+app.listen(5500, function(){
     console.log("servidor rodando! vamos fazer nosso app")
 });
 
