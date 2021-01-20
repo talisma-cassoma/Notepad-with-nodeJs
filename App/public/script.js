@@ -57,7 +57,7 @@ document.querySelectorAll('.Note').forEach(item =>{
         function editTitle(){//editar o titulo
             modify.title = true
             let titleOldtext = modify.titleOldContent.innerText
-            modify.titleOldContent.innerText = ''            
+            modify.titleOldContent.style.display = 'none'            
            
             modify.inputTitle.style.display = 'block'
             modify.inputTitle.value = titleOldtext
@@ -74,7 +74,7 @@ document.querySelectorAll('.Note').forEach(item =>{
         function editContent(){//editar o titulo
             modify.post = true
             let postOldtext = modify.postOldContent.innerText
-            modify.postOldContent.innerText = ''            
+            modify.postOldContent.style.display = 'none'             
            
             modify.inputPost.style.display = 'block'
             modify.inputPost.value = postOldtext
