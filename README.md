@@ -1,7 +1,7 @@
 # Notepad with node
 
 
-<img src="/images/app.gif">
+<img src="images/app.gif">
 
 
 ```npm install express --save```
