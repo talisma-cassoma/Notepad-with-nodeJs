@@ -1,5 +1,9 @@
 # Notepad with node
 
+
+<img src="/images/app.gif">
+
+
 ```npm install express --save```
 
 ```npm install --save sequelize```
