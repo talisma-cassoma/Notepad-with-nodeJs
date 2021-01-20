@@ -18,7 +18,9 @@ const Post = require('./modules/post');
 //rotas 
     app.get('/', function(req, res){
         //recebendos os dados da db
-        Post.findAll().then( function(posts){//caso de duvida reassitir aula #25 
+        Post.findAll({
+            order: [['id', 'DESC']]
+        }).then( function(posts){//caso de duvida reassitir aula #25 
             res.render('home', {posts: posts})//<--a minha variavel posts recebe as proproiedades do argumento postx passado por parametro
         })
     })    

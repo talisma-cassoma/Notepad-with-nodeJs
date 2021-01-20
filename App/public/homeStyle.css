@@ -1,96 +1,144 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+  overflow-wrap: break-word;/*quebar o texto*/
+  transition: ease-in-out;
+}
+*::-webkit-scrollbar {/*hidde scrollbar*/
+    display: none;
+}
+@keyframes getIn{ 
+  0%{ transform:  translate(-150%, -80px) scale(0); 
+  border-radius: 11% 89% 25% 75% / 84% 46% 54% 16% ; }
+	25%{transform: translate(-75%, -60px) scale(0.2, 0.5); 
+	border-radius: 11% 89% 48% 52% / 47% 46% 54% 53% ;}
+	50%{transform:  translate(-50%, -40px) scale(0.6, 0.5); 
+	border-radius: 11% 89% 48% 52% / 47% 46% 54% 53% ;}
+	75%{transform:  translate(-25%, -20px) scale(0.7);
+	border-radius:11% 89% 21% 79% / 47% 10% 90% 53%  ;}
+  100%{ transform: translate(0%, 0px) scale(1); 
+	border-radius: 12px;}
+		}
+html,
 body {
-  background-color: #100e17;
-  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
 }
-
-.container {
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  top: 60px;
-  left: calc(50% - 300px);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+body{
+	display: flex ;
+	justify-content: center;
+	align-items: center;
+	background-color: #F1F3F8;
 }
-
-.card {
+.container{
   display: flex;
-  height: 280px;
-  width: 200px;
-  background-color: #2538dd;;
-  border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-/*   margin-left: -50px; */
-  transition: 0.4s ease-out;
+  min-width: 1224px;
+	width: 85vw;
+	height: 85vh;
+	background-color: white;
+	border-radius: 12px;
+
+}
+aside{
+	width:20%;
+	max-width: 90px;
+	height: 100%;
+	border-right: solid 2px #F1F3F8;
+	justify-content: center;
+    display: grid;
+    grid-template-rows: 80px auto;
+}
+
+aside p{
+  padding-top: 30px;
+}
+.addNote{
+	margin-top: 40px;
+	display: flex;
+	border-radius: 50%;
+	background-color: black;
+	width: 40px;
+  height: 40px;
+  justify-self: center;
+	justify-content: center;
+	align-items: center;
+}
+.fa.fa-plus{
+	color: white
+}
+main{
+	width: 90%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 80px 117px auto;
+}
+main header{
+		padding: 30px 0px 1px 70px;
+}
+main header i.fa.fa-search{
+		color: #cbcccf;
+		margin-right: 5px;
+}
+input, textarea{
+	border: hidden;
+  outline: none;
+  font-size: unset;
+}
+main header input:hover{
+  border-bottom: solid 1px #F1F3F8;
+}
+main h1{
+	  display: flex;
+    align-self: center;
+    margin-left: 70px;
+}
+.notesContainer{
+display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 30px 30px;
+    width: fit-content;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+		padding-left: 70px;
+		flex-wrap: wrap;
+}
+form{
   position: relative;
-  left: 0px;
+display: flex;
+flex-direction: column;
+width: 230px;
+height: 230px;
+padding: 25px;
+overflow-y: scroll;
+border-radius: 12px;    
 }
-
-.card:not(:first-child) {
-    margin-left: -50px;
-    background-color: #323947; 
+form.createNote{
+  display: none;
+	animation-name: getIn;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
 }
+form.createNote button{
+  display: none;
+  border: none;}
 
-.card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
+form.createNote:hover button{
+  display: flex;
 }
-
-.card:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
-}
-
-.title {
-  color: white;
-  font-weight: 300;
-  position: absolute;
-  left: 20px;
-  top: 15px;
-}
-
-.bar {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  height: 5px;
-  width: 150px;
-}
-
-.emptybar {
-  background-color: #2e3033;
-  width: 100%;
-  height: 100%;
-}
-
-.filledbar {
-  color: white;
-  font-size: 0;
-  position: absolute;
-  top: 0px;
-  z-index: 3;
-  width: 0px;
-  height: 100%;
-  background: rgb(0,154,217);
-  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
-  transition: 0.6s ease-out;
-}
-
-.card:hover .filledbar {
-  width: 120px;
-  transition: 0.4s ease-out;
-  font-size: small;
-}
-
 /*-------exit btn------------------------*/
 .exitBtn{
 	position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     width: 20px;
     height: 20px;
-    display: grid;
+    display: none;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -98,7 +146,6 @@ body {
 }
 .pile{
 	position: relative;
-	background-color: ghostwhite;
   height: 2px;
   width: 10px;
   transition: all 0.2s linear;
@@ -107,25 +154,25 @@ body {
 .exitBtn:hover .pile.one{
   transform: translateX(0) translateY(5px) rotate(45deg);
   width: 15px;
-  background-color: red;
+  background-color: #ffbb00;
 }
 
 .exitBtn:hover .pile.two{
 	transform: translateX(0) translateY(-5px) rotate(-45deg);
   width: 15px;
-  background-color: red;
+  background-color: #ffbb00;
 }
 /*-------------------*/
 
 
 .exitBtn.check:hover .pile.one{
-  transform: translateX(2px) translateY(11px) rotate(58deg);
+  transform: translateX(-1px) translateY(7px) rotate(58deg);
   width: 6px;
   background-color: #00f349;
 }
 
 .exitBtn.check:hover .pile.two{
-	transform: translateX(4px) translateY(0px) rotate(-30deg);
+	transform: translateX(1px) translateY(-4px) rotate(-30deg);
     width: 15px;
   background-color: #00f349;
 }
@@ -140,6 +187,34 @@ body {
 input[name = "inputTitle"],textarea[name = "inputPost"]{
   display: none; 
 }
-.isDisabled {
-  pointer-events: none;
+input[name = "inputTitle"]{
+  width: 170px;
 }
+.createdAt{
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  font-size: xx-small;
+  color: slategray;
+}
+form:hover .createdAt{
+display: block;
+}
+form:hover .exitBtn{
+  display: grid;
+  }
+.editBtn,form.createNote button{
+  position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color:  #2e3033;
+    color: white;
+    font-size: small;
+}
+.editBtn{
+  display: grid;}
