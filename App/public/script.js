@@ -16,6 +16,8 @@ for(let i=0; i<createNote.length; i++){
         createNote[0].style.display = 'flex';
     }) 
 
+
+
 document.querySelectorAll('.Note').forEach(item =>{
     
     var modify = {
@@ -35,6 +37,10 @@ document.querySelectorAll('.Note').forEach(item =>{
                 modify.inputTitle.style.backgroundColor = modify.form.style.backgroundColor
                 modify.inputPost.style.backgroundColor = modify.form.style.backgroundColor
 
+                //edit Button
+
+                let editButton = modify.form.querySelector('.editBtn')
+
                 function checked(){
                     modify.deleteBtn.href = "#" 
                     modify.checkBtn.addEventListener('mouseover',()=>{
@@ -48,23 +54,24 @@ document.querySelectorAll('.Note').forEach(item =>{
                 modify.inputTitle.value = modify.titleOldContent.innerText 
     
         //title
-        modify.titleOldContent.addEventListener('dblclick',()=>{//editar o titulo
+        function editTitle(){//editar o titulo
             modify.title = true
             let titleOldtext = modify.titleOldContent.innerText
             modify.titleOldContent.innerText = ''            
            
             modify.inputTitle.style.display = 'block'
             modify.inputTitle.value = titleOldtext
-
-            
+       
             if(modify.title == true){
                 checked()          
-                }
-          
-        })
+                }       
+        }
+
+        //edit title
+        modify.titleOldContent.addEventListener('dblclick', editTitle)
 
         //content 
-        modify.postOldContent.addEventListener('dblclick',()=>{//editar o titulo
+        function editContent(){//editar o titulo
             modify.post = true
             let postOldtext = modify.postOldContent.innerText
             modify.postOldContent.innerText = ''            
@@ -72,12 +79,18 @@ document.querySelectorAll('.Note').forEach(item =>{
             modify.inputPost.style.display = 'block'
             modify.inputPost.value = postOldtext
 
-            
             if(modify.post == true){
                 checked()          
-                }
-           
-        })
+                }    
+        }
+        //double click on content 
+         modify.postOldContent.addEventListener('dblclick', editContent)
+
+        //editButton function
+         editButton.addEventListener('click', ()=>{
+            editTitle(); 
+            editContent();
+         })
 })
 
  

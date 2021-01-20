@@ -38,8 +38,8 @@ body{
 }
 .container{
   display: flex;
-  min-width: 1224px;
-	width: 85vw;
+  min-width: 1240px;
+	/*width: 85vw;*/
 	height: 85vh;
 	background-color: white;
 	border-radius: 12px;
@@ -85,7 +85,7 @@ main header i.fa.fa-search{
 		color: #cbcccf;
 		margin-right: 5px;
 }
-input, textarea{
+input, textarea, button{
 	border: hidden;
   outline: none;
   font-size: unset;
