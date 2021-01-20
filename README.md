@@ -2,7 +2,7 @@
 
 
 <h1 align="center">
-    <img alt="Happy" title="Happy" src="images/app.gif" />
+    <img alt="Happy" title="Happy" src="images/aezgif.com-video-to-gif.gif" />
 </h1>
 
 
