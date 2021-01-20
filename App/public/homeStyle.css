@@ -13,6 +13,7 @@
 *::-webkit-scrollbar {/*hidde scrollbar*/
     display: none;
 }
+
 @keyframes getIn{ 
   0%{ transform:  translate(-150%, -80px) scale(0); 
   border-radius: 11% 89% 25% 75% / 84% 46% 54% 16% ; }
