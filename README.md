@@ -1,9 +1,9 @@
 # Notepad with node
 
 
-<h1 align="center">
-    <img alt="Happy" title="Happy" src="images/aezgif.com-video-to-gif.gif" />
-</h1>
+<p align="center">
+    <img alt=App" title="App gif" src="images/App.gif"/>
+</p>
 
 
 ```npm install express --save```
