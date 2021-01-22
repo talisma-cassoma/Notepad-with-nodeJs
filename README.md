@@ -8,7 +8,7 @@ frontend made with pure html and css
     <img alt="App" title="App gif" src="images/App.gif"/>
 </p>
 <p align="center">
-    <img alt="App functions" title="App functions " src="images/appFunctions.png" with="100%"/>
+    <img alt="App functions" title="App functions " src="images/appFunction.png" with="100%"/>
 </p>
 <p align="center">
     <img alt="delete Note" title="delete Note" src="images/deleteNote.gif"/>
