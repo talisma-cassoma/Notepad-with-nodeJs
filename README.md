@@ -4,7 +4,7 @@ backend made in NODE with a mysql database
 
 frontend made with pure html and css 
 
-<h1>Frontend</h1>
+<h2>Frontend</h2>
 
 <p align="center">
     <img alt="App" title="App gif" src="images/App.gif"/>
@@ -23,7 +23,7 @@ if we just see the notes it stays like this:</p>
     <img alt="save changes" title="save changes" src="images/saveChanges.gif"/>
 </p>
 
-<h1>Backend</h1>
+<h2>Backend</h2>
 
 you can run this projet installing those dependencies : 
 
