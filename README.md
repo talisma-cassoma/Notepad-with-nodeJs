@@ -10,9 +10,13 @@ frontend made with pure html and css
 <p align="center">
     <img alt="App functions" title="App functions " src="images/appFunction.png" with="100%"/>
 </p>
+<p>
+the button changes depending on the mode
+if we just see the notes it stays like this:</p>
 <p align="center">
     <img alt="delete Note" title="delete Note" src="images/deleteNote.gif"/>
 </p>
+<p>but if you edit the note it changes like that</p> 
 <p align="center">
     <img alt="save changes" title="save changes" src="images/saveChanges.gif"/>
 </p>
