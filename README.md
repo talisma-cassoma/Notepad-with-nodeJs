@@ -4,6 +4,8 @@ backend made in NODE with a mysql database
 
 frontend made with pure html and css 
 
+<h1>Frontend</h1>
+
 <p align="center">
     <img alt="App" title="App gif" src="images/App.gif"/>
 </p>
@@ -20,6 +22,9 @@ if we just see the notes it stays like this:</p>
 <p align="center">
     <img alt="save changes" title="save changes" src="images/saveChanges.gif"/>
 </p>
+
+<h1>Backend</h1>
+
 you can run this projet installing those dependencies : 
 
 ```npm install express --save```
