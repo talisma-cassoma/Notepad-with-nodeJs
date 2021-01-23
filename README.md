@@ -25,8 +25,28 @@ if we just see the notes it stays like this:</p>
 
 <h2>Backend</h2>
 
-you can run this projet installing those dependencies : 
+<p>for create a mySQL database run this code:</p>
 
+```js
+cont db =require("./module/db")
+const Post = db.sequelize.define('postagens', {
+    titulo: {
+        type: db.Sequelize.STRING(50)
+    },
+    conteudo:{
+        type: db.Sequelize.TEXT
+    }
+})
+
+Post.sync({force: true});//para forçar a criar caso ou rectiar a tabela ...
+
+db.sequelize.authenticate().then(function(){
+    console.log('conectado ao banco de dados')
+}).catch(function(erro){
+    console.log('erro de coneccao'+ erro)
+})
+```
+<p>you can run this projet installing those dependencies :</p> 
 
 ```npm install express --save```
 
