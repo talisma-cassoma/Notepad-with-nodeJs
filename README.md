@@ -38,7 +38,7 @@ const Post = db.sequelize.define('postagens', {
     }
 })
 
-Post.sync({force: true});//para forçar a criar caso ou rectiar a tabela ...
+Post.sync({force: true});//para forçar a criar ...
 
 db.sequelize.authenticate().then(function(){
     console.log('conectado ao banco de dados')
