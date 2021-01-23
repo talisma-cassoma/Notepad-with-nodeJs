@@ -25,6 +25,20 @@ if we just see the notes it stays like this:</p>
 
 <h2>Backend</h2>
 
+<p>you can run this projet installing those dependencies :</p> 
+
+```npm install express --save```
+
+```npm install --save sequelize```
+
+```npm install mysql2```
+
+```npm install nodemon -g```
+
+```npm install --save express-handlebars```
+
+```npm install --save body-parser```
+
 <p>for create a mySQL database -> create js file and run this code on node:</p>
 
 ```js
@@ -46,16 +60,3 @@ db.sequelize.authenticate().then(function(){
     console.log('erro de coneccao'+ erro)
 })
 ```
-<p>you can run this projet installing those dependencies :</p> 
-
-```npm install express --save```
-
-```npm install --save sequelize```
-
-```npm install mysql2```
-
-```npm install nodemon -g```
-
-```npm install --save express-handlebars```
-
-```npm install --save body-parser```
