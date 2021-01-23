@@ -27,8 +27,6 @@ if we just see the notes it stays like this:</p>
 
 you can run this projet installing those dependencies : 
 
-```js
-```
 
 ```npm install express --save```
 
