@@ -25,10 +25,10 @@ if we just see the notes it stays like this:</p>
 
 <h2>Backend</h2>
 
-<p>for create a mySQL database run this code:</p>
+<p>for create a mySQL database -> create js file and run this code on node:</p>
 
 ```js
-cont db =require("./module/db")
+cont db =require("./module/db") //<-- db.js directory 
 const Post = db.sequelize.define('postagens', {
     titulo: {
         type: db.Sequelize.STRING(50)
