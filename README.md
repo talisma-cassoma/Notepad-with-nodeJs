@@ -4,6 +4,8 @@ backend made in NODE with a mysql database
 
 frontend made with pure html and css 
 
+credits for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">Ariuka</a> from dribble for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">UI design</a>
+
 <h2>Frontend</h2>
 
 <p align="center">
