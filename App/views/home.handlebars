@@ -15,35 +15,37 @@
 			</aside>
 			<main>
 				<header>
-			<label for="searchLogo"><i class="fa fa-search" aria-hidden="true"></i></label>
+					<label for="searchLogo"><i class="fa fa-search" aria-hidden="true"></i></label>
 					<input id="searchLogo" class="searchInput" type="text" placeholder="Search">
 				</header>
 				<h1>Notes</h1>
 				<section class="notesContainer">
 					<form action="/confirmacao" method="POST" class="createNote">
-      					<input name="titulo" type="text" placeholder="Titulo"/>
-      					<textarea name="postagem" placeholder="poste este aqui" cols="30" rows="10"></textarea>
-      					<button type="submit"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
-    				</form>
+      						<input name="titulo" type="text" placeholder="Titulo"/>
+      						<textarea name="postagem" placeholder="poste este aqui" cols="30" rows="10"></textarea>
+      						<button type="submit"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+    					</form>
 					 {{#each posts}}
-            <form class="Note" action="/modificar/{{dataValues.id}}" method="POST">
-    	          <a href="/deletar/{{dataValues.id}}"><div class="exitBtn" >
-					      <div class="pile one"></div>
-					            <div class="pile two"></div>
-			    	</div></a>
-                  <h2 class="title"><p class="titleContent">{{dataValues.titulo}}</p>
-                    <input type="text" name="inputTitle">
-                  </h2>
-                    <p class="postContent">{{dataValues.conteudo}}</p>
+            				<form class="Note" action="/modificar/{{dataValues.id}}" method="POST">
+    	          			<a href="/deletar/{{dataValues.id}}">
+						<div class="exitBtn" >
+					      		<div class="pile one"></div>
+					      		<div class="pile two"></div>
+			    			</div>
+					</a>
+                  			<h2 class="title"><p class="titleContent">{{dataValues.titulo}}</p>
+                    				<input type="text" name="inputTitle">
+                  			</h2>
+                    			<p class="postContent">{{dataValues.conteudo}}</p>
 					<textarea name="inputPost" cols="18" rows="10"></textarea>
 				 	<p class="createdAt">{{dataValues.createdAt}}</p>
 					 <div class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-              </form>
-              {{/each}}
+              				</form>
+              				{{/each}}
 				</section>
 			</main>
 		</div>
-<script src="script.js"></script>
+	<script src="script.js"></script>
   </body>
 </html>
 
