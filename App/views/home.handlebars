@@ -27,19 +27,19 @@
     					</form>
 					 {{#each posts}}
             				<form class="Note" action="/modificar/{{dataValues.id}}" method="POST">
-    	          			<a href="/deletar/{{dataValues.id}}">
-						<div class="exitBtn" >
-					      		<div class="pile one"></div>
-					      		<div class="pile two"></div>
-			    			</div>
-					</a>
-                  			<h2 class="title"><p class="titleContent">{{dataValues.titulo}}</p>
-                    				<input type="text" name="inputTitle">
-                  			</h2>
-                    			<p class="postContent">{{dataValues.conteudo}}</p>
-					<textarea name="inputPost" cols="18" rows="10"></textarea>
-				 	<p class="createdAt">{{dataValues.createdAt}}</p>
-					 <div class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+    	          				<a href="/deletar/{{dataValues.id}}">
+							<div class="exitBtn" >
+					      			<div class="pile one"></div>
+					      			<div class="pile two"></div>
+			    				</div>
+						</a>
+                  				<h2 class="title"><p class="titleContent">{{dataValues.titulo}}</p>
+                    					<input type="text" name="inputTitle">
+                  				</h2>
+                    				<p class="postContent">{{dataValues.conteudo}}</p>
+						<textarea name="inputPost" cols="18" rows="10"></textarea>
+				 		<p class="createdAt">{{dataValues.createdAt}}</p>
+					 	<div class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></div>
               				</form>
               				{{/each}}
 				</section>
