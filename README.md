@@ -33,7 +33,7 @@ if we just see the notes it stays like this:</p>
 
 ```npm install --save sequelize```
 
-```npm install mysql2```
+```npm install sqlite3``` for a sqlite db or ```npm install mysql2``` for a mysql db 
 
 ```npm install nodemon -g```
 
