@@ -1,0 +1,28 @@
+{
+  "name": "Notepad-with-nodeJs",
+  "version": "1.0.0",
+  "description": "backend made in NODE with a mysql database",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "sequelize": "^6.5.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talisma-cassoma/Notepad-with-nodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talisma-cassoma/Notepad-with-nodeJs/issues"
+  },
+  "homepage": "https://github.com/talisma-cassoma/Notepad-with-nodeJs#readme"
+}

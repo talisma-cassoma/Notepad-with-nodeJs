@@ -36,6 +36,7 @@ document.querySelectorAll('.Note').forEach(item =>{
                 modify.form.style.backgroundColor = getRandomColor();
                 modify.inputTitle.style.backgroundColor = modify.form.style.backgroundColor
                 modify.inputPost.style.backgroundColor = modify.form.style.backgroundColor
+								
 
                 //edit Button
 
