@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/talisma-cassoma/Notepad-with-nodeJs)
+
 # Notepad with node
 
 backend made in NODE with a mysql database
@@ -33,7 +35,7 @@ if we just see the notes it stays like this:</p>
 
 ```npm install --save sequelize```
 
-```npm install sqlite3``` for a sqlite db or ```npm install mysql2``` for a mysql db 
+```npm install sqlite3 --save``` for a sqlite db or ```npm install mysql2``` for a mysql db 
 
 ```npm install nodemon -g```
 
