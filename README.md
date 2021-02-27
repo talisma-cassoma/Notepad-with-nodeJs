@@ -63,4 +63,4 @@ db.sequelize.authenticate().then(function(){
 })
 ```
 
-wanna see for your self take a look <a src="https://notepad-with-nodejs.talismamanuel.repl.co/">here</a>
+wanna see for your self take a look <a href="https://notepad-with-nodejs.talismamanuel.repl.co/">here</a>
