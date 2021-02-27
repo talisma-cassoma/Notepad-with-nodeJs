@@ -62,5 +62,3 @@ db.sequelize.authenticate().then(function(){
     console.log('erro de coneccao'+ erro)
 })
 ```
-
-wanna see for your self take a look <a href="https://notepad-with-nodejs.talismamanuel.repl.co/">here</a>
