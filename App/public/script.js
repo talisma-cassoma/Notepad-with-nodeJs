@@ -11,6 +11,7 @@ function getRandomColor() {
     let createNoteColor= getRandomColor()
 for(let i=0; i<createNote.length; i++){
     createNote[i].style.backgroundColor = createNoteColor;//Create form color
+
 }
      document.querySelector('.addNote').addEventListener('click',()=>{
         createNote[0].style.display = 'flex';
@@ -53,7 +54,7 @@ document.querySelectorAll('.Note').forEach(item =>{
                 }
                 modify.inputPost.value = modify.postOldContent.innerText    //save old content
                 modify.inputTitle.value = modify.titleOldContent.innerText 
-    
+								
         //title
         function editTitle(){//editar o titulo
             modify.title = true

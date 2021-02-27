@@ -118,6 +118,9 @@ padding: 25px;
 overflow-y: scroll;
 border-radius: 12px;    
 }
+form p{
+	white-space: pre-wrap;/*For line break \n and tabs \t:*/
+}
 form.createNote{
   display: none;
 	animation-name: getIn;
