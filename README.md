@@ -15,7 +15,7 @@ credits for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">
     <img alt="App functions" title="App functions " src="images/appFunction.png" with="100%"/>
 </p>
 <p>
-the button changes depending on the mode
+the button changes depending on the mode,
 if we just see the notes it stays like this:</p>
 <p align="center">
     <img alt="delete Note" title="delete Note" src="images/deleteNote.gif"/>
