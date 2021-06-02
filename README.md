@@ -62,3 +62,4 @@ db.sequelize.authenticate().then(function(){
     console.log('erro de coneccao'+ erro)
 })
 ```
+see it for yourself <a href="https://wtho-onlineshop.talismamanuel.repl.co/">here</a>
