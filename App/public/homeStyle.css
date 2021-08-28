@@ -1,224 +1,208 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+/* Set the size of the div element that contains the map */
+      #map {
+        height: 100%; 
+        /* The width is the width of the web page */
+      }
+      @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Work Sans', sans-serif;
-  overflow-wrap: break-word;/*quebar o texto*/
-  transition: ease-in-out;
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
 }
-*::-webkit-scrollbar {/*hidde scrollbar*/
-    display: none;
+html, body{
+  display:flex;
+  flex-wrap: wrap;
+  width:100vw;
+  height:100vh;
 }
-
-@keyframes getIn{ 
-  0%{ transform:  translate(-150%, -80px) scale(0); 
-  border-radius: 11% 89% 25% 75% / 84% 46% 54% 16% ; }
-	25%{transform: translate(-75%, -60px) scale(0.2, 0.5); 
-	border-radius: 11% 89% 48% 52% / 47% 46% 54% 53% ;}
-	50%{transform:  translate(-50%, -40px) scale(0.6, 0.5); 
-	border-radius: 11% 89% 48% 52% / 47% 46% 54% 53% ;}
-	75%{transform:  translate(-25%, -20px) scale(0.7);
-	border-radius:11% 89% 21% 79% / 47% 10% 90% 53%  ;}
-  100%{ transform: translate(0%, 0px) scale(1); 
-	border-radius: 12px;}
-		}
-html,
-body {
-  height: 100vh;
+section{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-body{
-	display: flex ;
-	justify-content: center;
-	align-items: center;
-	background-color: #F1F3F8;
+.block{
+  background-color: #E7E6ED;
+    width: 50%;
+    min-width: 415px;
 }
 .container{
-  display: flex;
-  min-width: 1240px;
-	/*width: 85vw;*/
-	height: 85vh;
-	background-color: white;
-	border-radius: 12px;
-
+  background-color:#fff;
+  width:40px;
+  margin: 10px;
 }
-aside{
-	width:20%;
-	max-width: 90px;
-	height: 100%;
-	border-right: solid 2px #F1F3F8;
-	justify-content: center;
-    display: grid;
-    grid-template-rows: 80px auto;
+#drag1{
+  width:80%;
+  min-width: 300px;
+  height:35vh;
+  min-width: 250px;
+  min-height: 300px;
+  padding:12px;
+  background-color: #E7E6ED;
+  border: none;
+  border-radius: 5px;
 }
 
-aside p{
-  padding-top: 30px;
+#drag2{
+  width: 20vw;
+  min-width: 300px;
+  height: 40vh;
+  min-height: 300px;
+  background-color:#efefef;
+  box-shadow: 1px 1px 7px #bbb;
+  border-radius:5%;
 }
-.addNote{
-	margin-top: 40px;
-	display: flex;
-	border-radius: 50%;
-	background-color: black;
-	width: 40px;
-  height: 40px;
-  justify-self: center;
-	justify-content: center;
-	align-items: center;
-}
-.fa.fa-plus{
-	color: white
-}
-main{
-	width: 90%;
-	height: 100%;
-	display: grid;
-	grid-template-rows: 80px 117px auto;
-}
-main header{
-		padding: 30px 0px 1px 70px;
-}
-main header i.fa.fa-search{
-		color: #cbcccf;
-		margin-right: 5px;
-}
-input, textarea, button{
-	border: hidden;
-  outline: none;
-  font-size: unset;
-}
-main header input:hover{
-  border-bottom: solid 1px #F1F3F8;
-}
-main h1{
-	  display: flex;
-    align-self: center;
-    margin-left: 70px;
-}
-.notesContainer{
-display: grid;
-    grid-template-columns: repeat(4,auto);
-    grid-gap: 30px 30px;
-    width: fit-content;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-		padding-left: 70px;
-		flex-wrap: wrap;
-}
-form{
+#drag3{
   position: relative;
-display: flex;
-flex-direction: column;
-width: 230px;
-height: 230px;
-padding: 25px;
-overflow-y: scroll;
-border-radius: 12px;    
+  min-width: 210px;
+  min-height: 300px;
+  background-color:#efefef;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  box-shadow: 1px 1px 7px #bbb; 
+  border-radius:5%; 
 }
-form p{
-	white-space: pre-wrap;/*For line break \n and tabs \t:*/
+/*#mapid { height: 100%; }*/
+#drag4{
+  width:40vw;
+  height:40vh;
+  padding: 10px;
 }
-form.createNote{
-  display: none;
-	animation-name: getIn;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-fill-mode: forwards;
-}
-form.createNote button{
-  display: none;
-  border: none;}
-
-form.createNote:hover button{
-  display: flex;
-}
-/*--------CSS+JS-------------*/
-.postar{
-  position: absolute;
-  padding: 4px;
-  color: white;
-  border-radius: 7%;
-}
-input[name = "inputTitle"],textarea[name = "inputPost"]{
-  display: none; 
-}
-input[name = "inputTitle"]{
-  width: 170px;
-}
-.createdAt{
-  display: none;
-  position: absolute;
-  bottom: 10px;
-  font-size: xx-small;
-  color: slategray;
-}
-form:hover .createdAt{
-display: block;
-}
-form:hover .exitBtn{
+#drag5{
+  min-width: 300px;
+  min-height: 150px;
+  width: 300px;
+  height: 150px;
+  background-color: #633fb8;
+  align-items: center;
+  text-align: left;
   display: grid;
-  }
-.editBtn,form.createNote button{
+  color: #fff;
+  border-radius: 7px;
+  padding: 25px;
+}
+
+#status
+{ justify-content: center;
+  display: flex;
+  margin-top: 5px;
+}
+.BelowText{
+  /* margin-top: 18px; */
+  display: flex;
+  margin-top:5px;
+  justify-content: space-around;
+  text-align: center;
+}
+.BelowText P{
+  border-radius: 11px;
+  background-color: #E7E6ED;
+  padding: 5px;
+  height: 25px;
+  border: 1px solid white;
+  width: 100px;
+}
+.BelowText P:hover{
+  border-radius: 11px;
+  background-color: #fff;}
+/* Pie Chart */
+.progress-pie-chart {
+  width:200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  box-shadow: 1px 1px 7px #bbb;
+}
+
+.progress-pie-chart.gt-50 {
+  background-color: #81CE97;
+}
+
+.ppc-progress {
+  content: "";
   position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    background-color:  #2e3033;
-    color: white;
-    font-size: small;
-}
-.editBtn{
-  display: grid;}
-/*-------exit btn------------------------*/
-.exitBtn{
-	position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    display: none;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    background-color:  #2e3033;
-}
-.pile{
-	position: relative;
-  height: 2px;
-  width: 10px;
-  transition: all 0.2s linear;
+  border-radius: 50%;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  clip: rect(0, 200px, 200px, 100px);
 }
 
-.exitBtn:hover .pile.one{
-  transform: translateX(0) translateY(5px) rotate(45deg);
-  width: 15px;
-  background-color: #ffbb00;
+.ppc-progress .ppc-progress-fill {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  clip: rect(0, 100px, 200px, 0);
+  background: #81CE97;
+  transform: rotate(60deg);
 }
 
-.exitBtn:hover .pile.two{
-	transform: translateX(0) translateY(-5px) rotate(-45deg);
-  width: 15px;
-  background-color: #ffbb00;
+.gt-50 .ppc-progress {
+  clip: rect(0, 100px, 200px, 0);
 }
-/*-----------CSS+JS--------*/
-
-
-.exitBtn.check:hover .pile.one{
-  transform: translateX(-1px) translateY(7px) rotate(58deg);
-  width: 6px;
-  background-color: #00f349;
+.gt-50 .ppc-progress .ppc-progress-fill {
+  clip: rect(0, 200px, 200px, 100px);
+  background: #777;
 }
 
-.exitBtn.check:hover .pile.two{
-	transform: translateX(1px) translateY(-4px) rotate(-30deg);
-    width: 15px;
-  background-color: #00f349;
+.ppc-percents {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 173.91304px/2);
+  top: calc(50% - 173.91304px/2);
+  width: 173.91304px;
+  height: 173.91304px;
+  background-color:#efefef;
+  text-align: center;
+  display: table;
+}
+.ppc-percents span {
+  display: block;
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #777;
 }
 
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-shadow: 1px 1px #bbb;
+}
+
+.progress-pie-chart {
+  margin: 30px auto 0;
+}
+.button{
+  display: flex;
+  position: absolute;
+  WIDTH: 35px;
+  height: 35px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #81CE97;
+  border-radius: 20%;
+}
+ .button.UP{
+  top: 105px;
+  right: 91px;
+ }
+ .button.RIGHT{
+  top: 133px;
+  right: 50px;
+ }
+ .button.LEFT{
+  top: 133px;
+  left: 44px;
+ }
+ .button.DOWN{
+  bottom: 105px;
+  right: 91px;
+ }

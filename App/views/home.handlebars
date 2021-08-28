@@ -4,45 +4,53 @@
    <link rel="stylesheet" href="homeStyle.css">
  </head>
 <body>
-	<div class="container">
-			<aside>
-				<p>Docket</p>
-				<div class="addNote"><i class="fa fa-plus" aria-hidden="true"></i></div>
-			</aside>
-			<main>
-				<header>
-					<label for="searchLogo"><i class="fa fa-search" aria-hidden="true"></i></label>
-					<input id="searchLogo" class="searchInput" type="text" placeholder="Search">
-				</header>
-				<h1>Notes</h1>
-				<section class="notesContainer">
-					<form action="/confirmacao" method="POST" class="createNote">
-      						<input name="titulo" type="text" placeholder="Titulo"/>
-      						<textarea name="postagem" placeholder="poste este aqui" cols="30" rows="10"></textarea>
-      						<button type="submit"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
-    					</form>
-					 {{#each posts}}
-            				<form class="Note" action="/modificar/{{dataValues.id}}" method="POST">
-    	          				<a href="/deletar/{{dataValues.id}}">
-							<div class="exitBtn" >
-					      			<div class="pile one"></div>
-					      			<div class="pile two"></div>
-			    				</div>
-						</a>
-                  				<h2 class="title"><p class="titleContent">{{dataValues.titulo}}</p>
-                    					<input type="text" name="inputTitle">
-                  				</h2>
-                    				<p class="postContent">{{dataValues.conteudo}}</p>
-						<textarea name="inputPost" cols="18" rows="10"></textarea>
-				 		<p class="createdAt">{{dataValues.createdAt}}</p>
-					 	<div class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></div>
-              				</form>
-              				{{/each}}
-				</section>
-			</main>
-		</div>
-	<script src="script.js"></script>
-  </body>
+    <!-- <h1>ESP32-CAM Pan and Tilt</h1> -->
+    <section class="block" id="section3" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="container" draggable="true" ondragstart="drag(event)" id="drag4">
+      </div>
+    </section>
+    <section class="block" id="section1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img  src="" draggable="true" ondragstart="drag(event)" id="drag1">
+      
+    </section>
+    <section class="block" id="section2" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+      <div class="container" draggable="true" ondragstart="drag(event)" id="drag2">
+        <p id="status">STATUS</p>
+        <div class="progress-pie-chart" data-percent="1"><!--Pie Chart -->
+          <div class="ppc-progress">
+            <div class="ppc-progress-fill"></div>
+          </div>
+          <div class="ppc-percents">
+            <div class="pcc-percents-wrapper">
+              <span>%</span>
+            </div>
+        </div>
+      </div>
+      <div class="BelowText">
+        <p>pressure: {{pressure}} </p>
+        <p>Temperature: {{temperature}} </p>
+       </div>
+      </div>
+      <div class="controls" draggable="true" ondragstart="drag(event)" id="drag3">
+        <button class="button UP" onclick="commandTo('up')">⬆</button>
+        <button class="button RIGHT" onclick="commandTo('right')">➡</button>
+        <button class="button LEFT" onclick="commandTo('left')">⬅</button>
+        <button class="button DOWN" onclick="commandTo('down')">⬇</button>
+      </div>
+    </section>
+    <section class="block report" id="section4" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <canvas id="preview"></canvas>
+        <div class="container" draggable="true" ondragstart="drag(event)" id="drag5">
+          <p>species <br> identified: </p>
+          <p>------------------------------------------------</p>
+          <p>quantity: </p>
+          <p>------------------------------------------------</p>
+          <p>coordenates: </p>
+          <p>------------------------------------------------</p>
+        </div> 
+    </section>
+    <!---script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTaNrH8OuGnb55Eo0eF81Cf7jo2XojhtI&amp;callback=initMap&amp;libraries=&amp;v=weekly" async=""></script--->
+    <script src="script.js"></script>
+</body>
 </html>
-
 

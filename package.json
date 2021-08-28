@@ -1,16 +1,20 @@
 {
-  "name": "Notepad-with-nodeJs",
+  "name": "INTELLCAPBOTSERVER",
   "version": "1.0.0",
   "description": "backend made in NODE with a mysql database",
   "main": "index.js",
   "dependencies": {
+    "algoliasearch": "^4.10.3",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1",
-    "sequelize": "^6.5.0",
+    "express-handlebars": "^5.3.2",
+    "firebase": "^8.8.1",
+    "firebase-admin": "^9.11.0",
+    "firebase-functions": "^3.14.1",
+    "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
