@@ -1,7 +1,7 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/talisma-cassoma/Notepad-with-nodeJs)
 
 # Notepad web app with node
-This is a CRUD application with backend in NODE and mysql database
+This is a CRUD application with backend in Nodejs and mysql database
 
 frontend made with pure html and css 
 
