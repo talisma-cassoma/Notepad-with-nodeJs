@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize({
   // o parametro `host`  é somente requirido para outras databases, 
   //o sqlite é uma banco de dados que fica armazenado na tua maquina 
-  //e nao é servida pelo servidor como as outras bases de dados 
+  //o sqlite nao é servido pelo servidor como as outras bases de dados 
   dialect: 'sqlite',
   storage: 'sqliteDB/database.sqlite' //vai criar essa rota para a dB
 });
