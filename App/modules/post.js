@@ -9,6 +9,6 @@ const Post = db.sequelize.define('postagens', {
     }
 })
 
-//Post.sync({force: true});//para forçar a criar caso ou recriar a tabela ...
+//Post.sync({force: true});//para forçar a criar caso nao exista ou recriar a tabela ...
 
 module.exports = Post
