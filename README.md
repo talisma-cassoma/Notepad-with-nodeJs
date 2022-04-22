@@ -13,7 +13,7 @@ credits for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">
     <img alt="App" title="App gif" src="images/App.gif"/>
 </p>
 <p align="center">
-    <img alt="App functions" title="App functions " src="images/appFunction.png" with="100%"/>
+    <img alt="App functions" title="App functions " src="images/appFunction.png" width="100%"/>
 </p>
 <p>
 the button changes depending on the mode
