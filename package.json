@@ -2,9 +2,9 @@
   "name": "blocnote",
   "version": "1.0.0",
   "description": "bloco de nota",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon views/server.js"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
