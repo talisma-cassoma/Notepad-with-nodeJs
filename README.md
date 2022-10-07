@@ -32,7 +32,7 @@ if we just see the notes it stays like this:</p>
 
 ```npm install```
 
-```npm run dev``
+```npm run dev```
 
 <p>if wanna use a mySQL database -> create js file and run this code on node:</p>
 
