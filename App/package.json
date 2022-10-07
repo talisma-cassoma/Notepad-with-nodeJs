@@ -1,0 +1,27 @@
+{
+  "name": "blocnote",
+  "version": "1.0.0",
+  "description": "bloco de nota",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon views/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talisma-cassoma/Notepad-with-nodeJs.git"
+  },
+  "author": "talisma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talisma-cassoma/Notepad-with-nodeJs/issues"
+  },
+  "homepage": "https://github.com/talisma-cassoma/Notepad-with-nodeJs#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.24.0",
+    "sqlite3": "^5.1.2"
+  }
+}

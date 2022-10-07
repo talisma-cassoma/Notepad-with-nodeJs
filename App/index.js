@@ -1,12 +1,12 @@
 const express = require("express")
 const app =  express();
-const handlebars = require('express-handlebars')
+const { engine } = require ('express-handlebars');
 const bodyParser = require('body-parser')
 const Post = require('./modules/post');
 
 //config hbs
     //tamplate engine
-    app.engine('handlebars', handlebars({defaultlayout: 'main'}))
+    app.engine('handlebars', engine({defaultlayout: 'main'}))
     app.set('view engine', 'handlebars')
 
 
