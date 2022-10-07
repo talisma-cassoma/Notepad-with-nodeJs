@@ -10,20 +10,20 @@ credits for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">
 <h2>Frontend</h2>
 
 <p align="center">
-    <img alt="App" title="App gif" src="images/App.gif"/>
+    <img alt="App" title="App gif" src="assets/App.gif"/>
 </p>
 <p align="center">
-    <img alt="App functions" title="App functions " src="images/appFunction.png" />
+    <img alt="App functions" title="App functions " src="assets/appFunction.png" />
 </p>
 <p>
 the button changes depending on the mode
 if we just see the notes it stays like this:</p>
 <p align="center">
-    <img alt="delete Note" title="delete Note" src="images/deleteNote.gif"/>
+    <img alt="delete Note" title="delete Note" src="assets/deleteNote.gif"/>
 </p>
 <p>but if you edit the note it changes like that</p> 
 <p align="center">
-    <img alt="save changes" title="save changes" src="images/saveChanges.gif"/>
+    <img alt="save changes" title="save changes" src="assets/saveChanges.gif"/>
 </p>
 
 <h2>Backend</h2>
