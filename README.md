@@ -30,19 +30,11 @@ if we just see the notes it stays like this:</p>
 
 <p>you can run this projet installing those dependencies :</p> 
 
-```npm install express --save```
+```npm install```
 
-```npm install --save sequelize```
+```npm run dev``
 
-```npm install sqlite3 --save``` for a sqlite db or ```npm install mysql2``` for a mysql db 
-
-```npm install nodemon -g```
-
-```npm install --save express-handlebars```
-
-```npm install --save body-parser```
-
-<p>for create a mySQL database -> create js file and run this code on node:</p>
+<p>if wanna use a mySQL database -> create js file and run this code on node:</p>
 
 ```js
 cont db =require("./module/db") //<-- db.js directory 
