@@ -28,7 +28,7 @@ if we just see the notes it stays like this:</p>
 
 <h2>Backend</h2>
 
-<p>you can run this projet by runnig thoses commands:</p> 
+<p>you can run this projet by running thoses commands:</p> 
 
 ```npm install```
 
