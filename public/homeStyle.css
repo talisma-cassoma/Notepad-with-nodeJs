@@ -85,6 +85,10 @@ main header i.fa.fa-search{
 		color: #cbcccf;
 		margin-right: 5px;
 }
+
+input, textarea{
+  background-color: transparent;
+}
 input, textarea, button{
 	border: hidden;
   outline: none;
@@ -132,6 +136,7 @@ form.createNote button{
 form.createNote:hover button{
   display: flex;
 }
+
 /*--------CSS+JS-------------*/
 .postar{
   position: absolute;
@@ -139,10 +144,10 @@ form.createNote:hover button{
   color: white;
   border-radius: 7%;
 }
-input[name = "inputTitle"],textarea[name = "inputPost"]{
+input[name = "color"]{
   display: none; 
 }
-input[name = "inputTitle"]{
+input[name = "title"]{
   width: 170px;
 }
 .createdAt{
