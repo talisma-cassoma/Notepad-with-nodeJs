@@ -19,7 +19,7 @@
 			</header>
 			<h1>Notes</h1>
 			<section class="notesContainer">
-				<form action="/postanote" method="POST" class="createNote" onsubmit="submitNoteColor()">
+				<form action="/postanote" method="POST" class="newNote" onsubmit="submitNoteColor()">
 					<input name="title" type="text" placeholder="Titulo" />
 					<textarea name="content" placeholder="poste este aqui" cols="30" rows="10"></textarea>
 					<button type="submit"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
@@ -27,19 +27,19 @@
 				{{#each posts}}
 				<form class="Note" action="/modificar/{{dataValues.id}}" method="POST" style="background-color: {{dataValues.color}}">
 					<a href="/deletar/{{dataValues.id}}">
-						<div class="exitBtn">
+						<div class="deleteBtn">
 							<div class="pile one"></div>
 							<div class="pile two"></div>
 						</div>
 					</a>
-					<h2 class="title">
+					<h2 class="title" ondblclick="modifyNoteTitle(this)">
 						<p class="titleContent">{{dataValues.title}}</p>
-						<input type="text" name="inputTitle">
+						<input type="text" name="inputTitle" class="hidden">
 					</h2>
-					<p class="postContent">{{dataValues.content}}</p>
-					<textarea name="inputPost" cols="18" rows="10"></textarea>
+					<p class="postContent" ondblclick="modifyNoteContent(this)">{{dataValues.content}}</p>
+					<textarea name="inputPost" cols="18" rows="10" class="hidden"></textarea>
 					<p class="createdAt">{{dataValues.createdAt}}</p>
-					<div class="editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+					<div class="editBtn" onclick="modifyNote(this)"><i class="fa fa-pencil" aria-hidden="true"></i></div>
 				</form>
 				{{/each}}
 			</section>

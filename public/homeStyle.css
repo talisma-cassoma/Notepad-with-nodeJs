@@ -30,6 +30,9 @@ html,
 body {
   height: 100vh;
 }
+.hidden{
+  display: none;
+}
 body{
 	display: flex ;
 	justify-content: center;
@@ -122,18 +125,18 @@ padding: 25px;
 overflow-y: scroll;
 border-radius: 12px;    
 }
-form.createNote{
+form.newNote{
   display: none;
 	animation-name: getIn;
 	animation-duration: 1s;
 	animation-timing-function: linear;
 	animation-fill-mode: forwards;
 }
-form.createNote button{
+form.newNote button{
   display: none;
   border: none;}
 
-form.createNote:hover button{
+form.newNote:hover button{
   display: flex;
 }
 
@@ -160,10 +163,10 @@ input[name = "title"]{
 form:hover .createdAt{
 display: block;
 }
-form:hover .exitBtn{
+form:hover .deleteBtn{
   display: grid;
   }
-.editBtn,form.createNote button{
+.editBtn,form.newNote button{
   position: absolute;
     bottom: 10px;
     right: 10px;
@@ -179,7 +182,7 @@ form:hover .exitBtn{
 .editBtn{
   display: grid;}
 /*-------exit btn------------------------*/
-.exitBtn{
+.deleteBtn{
 	position: absolute;
     top: 10px;
     right: 10px;
@@ -198,13 +201,13 @@ form:hover .exitBtn{
   transition: all 0.2s linear;
 }
 
-.exitBtn:hover .pile.one{
+.deleteBtn:hover .pile.one{
   transform: translateX(0) translateY(5px) rotate(45deg);
   width: 15px;
   background-color: #ffbb00;
 }
 
-.exitBtn:hover .pile.two{
+.deleteBtn:hover .pile.two{
 	transform: translateX(0) translateY(-5px) rotate(-45deg);
   width: 15px;
   background-color: #ffbb00;
@@ -212,13 +215,13 @@ form:hover .exitBtn{
 /*-----------CSS+JS--------*/
 
 
-.exitBtn.check:hover .pile.one{
+.deleteBtn.check:hover .pile.one{
   transform: translateX(-1px) translateY(7px) rotate(58deg);
   width: 6px;
   background-color: #00f349;
 }
 
-.exitBtn.check:hover .pile.two{
+.deleteBtn.check:hover .pile.two{
 	transform: translateX(1px) translateY(-4px) rotate(-30deg);
     width: 15px;
   background-color: #00f349;
