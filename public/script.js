@@ -31,3 +31,28 @@ function submitNoteColor() {
     )
 }
 
+//-------------- MODIFY NOTES --------
+function modifyNote(champName,id,text, checkBtn){
+
+
+    //change delete button animation to check button animation
+    checkBtn.classList.add('check')
+    console.log(id,text)  
+}
+
+const createdNotes = document.querySelectorAll('.Note')
+
+createdNotes.forEach(item => {
+    const noteId = parseInt(item.action.replace('http://localhost:5500/modificar/',''), 10);
+    const title = item.childNodes[3]
+    const content = item.childNodes[5]
+    const checkBtn = item.childNodes[1].childNodes[1]
+   
+    //console.log(title)    
+    
+    //turn title editable
+    title.addEventListener('dblclick', ()=>modifyNote(champName ='title', noteId, title.innerText, checkBtn))
+    //turn content editable
+    content.addEventListener('dblclick', ()=>modifyNote(champName ='content', noteId, title.innerText, checkBtn))
+    
+})
