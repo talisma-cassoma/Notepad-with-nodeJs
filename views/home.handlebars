@@ -19,19 +19,17 @@
 			</header>
 			<h1>Notes</h1>
 			<section class="notesContainer">
-				<form action="/postanote" method="POST" class="newNote" onsubmit="submitNoteColor()">
+				<form action="/postanote" method="POST" class="newNote" onsubmit="onSubmitAddNewNoteColor()">
 					<input name="title" type="text" placeholder="Titulo" />
 					<textarea name="content" placeholder="poste este aqui" cols="30" rows="10"></textarea>
 					<button type="submit"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
 				</form>
 				{{#each posts}}
-				<form class="Note" action="/modificar/{{dataValues.id}}" method="POST" style="background-color: {{dataValues.color}}">
-					<a href="/deletar/{{dataValues.id}}">
+				<form class="Note" action="/modify/{{dataValues.id}}" method="POST" style="background-color: {{dataValues.color}}">
 						<div class="deleteBtn">
 							<div class="pile one"></div>
 							<div class="pile two"></div>
 						</div>
-					</a>
 					<h2 class="title">
 						<p class="titleContent">{{dataValues.title}}</p>
 						<input type="text" name="inputTitle" class="hidden">

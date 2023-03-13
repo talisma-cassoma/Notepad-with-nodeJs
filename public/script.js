@@ -9,8 +9,8 @@ function getRandomColor() {
 }
 
 const btnAddNote = document.querySelector('.addNote')
-const newNote    = document.querySelector('.newNote')
-const checkBtn   = document.querySelector('.deleteBtn')
+const newNote = document.querySelector('.newNote')
+const checkBtn = document.querySelector('.deleteBtn')
 
 newNote.style.backgroundColor = getRandomColor()
 
@@ -18,7 +18,7 @@ btnAddNote.addEventListener('click', () => {
     newNote.style.display = 'flex';
 })
 
-function submitNoteColor() {
+function onSubmitAddNewNoteColor() {
     //add the note color to post request
     newNote.appendChild(
         Object.assign(
@@ -32,27 +32,62 @@ function submitNoteColor() {
 }
 
 //-------------- MODIFY NOTES --------
-function modifyNote(champName,id,text, checkBtn){
+async function deleteNote(noteId){
+    await axios({
+        method: 'get',
+        url: `http://localhost:5500/delete/${noteId}`
+    })
+}
+async function submitModifiedNote(noteId, title, content) {
+    await axios({
+        method: 'post',
+        url: `http://localhost:5500/modify/${noteId}`,
+        data: {
+            title: title.value,
+            content: content.value,
+            color: '#333'
+        }
+    });
+}
 
+ function modifyNote(textContent, input, checkBtn) {
 
     //change delete button animation to check button animation
-    checkBtn.classList.add('check')
-    console.log(id,text)  
+        checkBtn.classList.add('check')
+        textContent.style.display = 'none';
+        input.classList.remove('hidden')
+        
+        console.log(textContent)
+        input.value = textContent.innerText
+    
 }
 
 const createdNotes = document.querySelectorAll('.Note')
 
 createdNotes.forEach(item => {
-    const noteId = parseInt(item.action.replace('http://localhost:5500/modificar/',''), 10);
+    const noteId = parseInt(item.action.replace('http://localhost:5500/modify/', ''), 10);
     const title = item.childNodes[3]
     const content = item.childNodes[5]
-    const checkBtn = item.childNodes[1].childNodes[1]
-   
+    const checkBtn = item.childNodes[1]
+
+    const inputTitle = item.childNodes[3].childNodes[3]
+    const inputContent = item.childNodes[7]
+
     //console.log(title)    
-    
+
     //turn title editable
-    title.addEventListener('dblclick', ()=>modifyNote(champName ='title', noteId, title.innerText, checkBtn))
+    title.addEventListener('dblclick', () => modifyNote(title.childNodes[1], inputTitle, checkBtn))
     //turn content editable
-    content.addEventListener('dblclick', ()=>modifyNote(champName ='content', noteId, title.innerText, checkBtn))
+    content.addEventListener('dblclick', () => modifyNote(content, inputContent, checkBtn))
+
     
+    checkBtn.addEventListener('click', ()=>{
+        if(checkBtn.classList.contains('check')) {
+            //console.log('checkbutn active')
+            submitModifiedNote(noteId, inputTitle, inputContent)
+        }else{
+            checkBtn.addEventListener('click', () => deleteNote(noteId))
+        }
+    })
+
 })

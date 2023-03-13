@@ -35,7 +35,7 @@ const Postagens = require('./modules/post');
         return await Postagens.create({
             title : req.body.title, 
             content: req.body.content,
-            color: req.body.color || '#EEBFBF'
+            color: req.body.color
         }).then(function(){
             res.redirect('/')
         }).catch(function(error){
@@ -43,7 +43,7 @@ const Postagens = require('./modules/post');
         })
     })
 
-    app.get('/deletar/:id', function(req, res){
+    app.get('/delete/:id', function(req, res){
         //deletando dados apartir do botao no front-end
         Postagens.destroy({where: {id: req.params.id} //o id sera passado pra a home.handlebars
         }).then(function(){
@@ -55,11 +55,12 @@ const Postagens = require('./modules/post');
             })
     })
 
-    app.post('/modificar/:id', function(req, res){//rota pra pegar os dados
+    app.post('/modify/:id', function(req, res){//rota pra pegar os dados
         //modificando os dados na nossa db vindo do front-end
         Postagens.update({
             titulo : req.body.title, 
-            conteudo: req.body.post 
+            conteudo: req.body.content,
+            //color: req.body.color 
 
         }, { where: {
               id: req.params.id //req.body.id,
