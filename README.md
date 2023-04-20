@@ -1,9 +1,7 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/talisma-cassoma/Notepad-with-nodeJs)
 
 # Notepad web app with node
-This is a CRUD application with backend in Node.js and mysql database
-
-frontend made with pure html and css 
+This is a free tool for quick backup of text notes.the notes are stored securely in your browser.
 
 credits for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">Ariuka</a> from dribble for <a href="https://dribbble.com/shots/14037848-Docket-note-Side-menu">UI design</a>
 
@@ -55,3 +53,19 @@ db.sequelize.authenticate().then(function(){
     console.log('erro de coneccao'+ erro)
 })
 ```
+
+## requirements:
+
+- [] it should be possible to create a note
+- [] it should be possible to modify: 
+    -[] the title of the note
+    -[] the body of the note
+- [] it should be possible to delete a note
+- [] search note:
+    - [] by date
+    - [] by world
+
+## rules:
+
+it should not be possible to:
+- [] change more than one note at time

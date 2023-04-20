@@ -20,7 +20,7 @@ btnAddNote.addEventListener('click', () => {
 
 function onSubmitAddNewNoteColor() {
     //add the note color to post request
-    newNote.appendChild(
+     newNote.appendChild(
         Object.assign(
             document.createElement('input'),
             {
@@ -32,34 +32,54 @@ function onSubmitAddNewNoteColor() {
 }
 
 //-------------- MODIFY NOTES --------
-async function deleteNote(noteId){
-    await axios({
-        method: 'get',
-        url: `http://localhost:5500/delete/${noteId}`
+async function deleteNote(noteId) {
+    const response = await fetch(`http://localhost:5500/delete/${noteId}`, 
+    { 
+        method: 'get', 
+        redirect: "follow",
+        headers:
+             {
+                 accept: 'application.json',
+                 'content-type': 'application/json',
+             } 
     })
+    console.log(`${noteId}`)
 }
 async function submitModifiedNote(noteId, title, content) {
-    await axios({
+    const dados = {
+        title: `${title.value}`,
+        content: `${content.value}`,
+        color: '#333'
+    }
+
+    await fetch(`http://localhost:5500/modify/${noteId}`, {
         method: 'post',
-        url: `http://localhost:5500/modify/${noteId}`,
-        data: {
-            title: title.value,
-            content: content.value,
-            color: '#333'
-        }
+        redirect: 'follow',
+        headers: {
+            accept: 'application.json',
+            'content-type': 'application/json'
+          },
+        body: JSON.stringify(dados),
+    }).then((response) => response.json())
+    .then((data) => {
+        console.log("Success:", dados);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
     });
+
 }
 
- function modifyNote(textContent, input, checkBtn) {
+function modifyNote(textContent, input, checkBtn) {
 
     //change delete button animation to check button animation
-        checkBtn.classList.add('check')
-        textContent.style.display = 'none';
-        input.classList.remove('hidden')
-        
-        console.log(textContent)
-        input.value = textContent.innerText
-    
+    checkBtn.classList.add('check')
+    textContent.style.display = 'none';
+    input.classList.remove('hidden')
+
+    console.log(textContent)
+    input.value = textContent.innerText
+
 }
 
 const createdNotes = document.querySelectorAll('.Note')
@@ -80,14 +100,31 @@ createdNotes.forEach(item => {
     //turn content editable
     content.addEventListener('dblclick', () => modifyNote(content, inputContent, checkBtn))
 
-    
-    checkBtn.addEventListener('click', ()=>{
-        if(checkBtn.classList.contains('check')) {
+    //debug
+    checkBtn.addEventListener('click', () => {
+        if (checkBtn.classList.contains('check')) {
             //console.log('checkbutn active')
             submitModifiedNote(noteId, inputTitle, inputContent)
-        }else{
+        } else {
             checkBtn.addEventListener('click', () => deleteNote(noteId))
         }
     })
 
 })
+
+// async function getData() {
+
+//     const response = await fetch('http://localhost:5500',
+//         {
+//             method: 'get',
+//             redirect: 'follow',
+//             headers:
+//             {
+//                 accept: 'application.json',
+//                 'content-type': 'application/json',
+//             }
+//         });
+//     const data = await response.json();
+//     console.log(data);
+
+// }
